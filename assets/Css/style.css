@@ -7,4 +7,12 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.container-fluid button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #60d5d5;
+  border-color: #60d5d5;
+}
 /*# sourceMappingURL=style.css.map */
