@@ -1,15 +1,4 @@
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: #6b838c;
-  }
-  h1 {
-    text-align: center;
-  }
-  img {
-    position: relative;
-  }
-  form {
-    text-align: center;
-  }
+.container-fluid {
+  background-color: #066363;
 }
 /*# sourceMappingURL=style.css.map */

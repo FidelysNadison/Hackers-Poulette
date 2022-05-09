@@ -1,71 +1,75 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://kit.fontawesome.com/4f2b95033c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/assets/Css/style.css">
-  <title>Hackers-Poulette</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="shortcute icon" href="./assets/image/hackers-poulette-logo.png">
+  <title>Hackers Poulette</title>
 </head>
-
 <body>
-  <section id="title-logo">
-    <h1>CONTACT</h1>
-    <img src="/assets/image/hackers-poulette-logo.png" alt="">
-  </section>
-
-  <form action="POST">
-    <!--FOR NAME AND LASTNAME-->
-    <section id="name&lastname">
-      <div class="name" >
-        <input class="input" type="text" placeholder="Name">
-      </div>  
-      <div class="lastname">
-        <input class="input" type="lastname" placeholder="Lastname">
+  <div class= "container-fluid">
+    <div id="big-logo">
+      <img src="./assets/image/hackers-poulette-logo.png" alt="image not found">
+    </div>
+    <form class="row g-3 needs-validation" novalidate>
+      <!--ask name-->
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input type="text" class="form-control" id="validationCustom01"  required>
       </div>
-    </section>
-
-    <!--CHOICE FOR GENDER-->
-    <section id="man&women">
-      <div class="control">
-        <label class="radio">
-          <input type="radio" name="answer">
-          Man
-        </label>
-        <label class="radio">
-          <input type="radio" name="answer">
-          Women
-        </label>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="validationCustom02"required>
       </div>
-    </section>
 
-    <!--FOR EMAIL-->
-    <section id="email">
-        <input class="input is-large" type="email" placeholder="Email">
-    </section>
+      <!--ASK GENDER--> <br>
+      <div class="ask-gender" >
+        <label>Gender</label> <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option1">
+          <label class="form-check-label" for="inlineRadio1">Man</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+          <label class="form-check-label" for="inlineRadio2">Women </label>
+        </div>
+      </div>
 
-    <!--ENTER YOUR COUNTRY-->
-    <section id="country">
-      <label class="label">Country</label>
-      <input class="input" type="text">
-    </section>
+      <!--put your email--> 
+      <div class="mb-3"> <br>
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
 
-    <!--FOR SUBJECT (3 possibilities)-->
-    <section id="subject">
-      <label class="label">Subject</label>
-      <input class="input" type="text">
-    </section>
+      <!--select your country--> <br>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Select your country</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
 
-    <!--FOR MESSAGE-->
-    <section id="message">
-      <input type="text" placeholder="message">
-    </section>
-    <button type="submit" class="button is-primary">Send</button>
-  </form>
+      <!--choose subject (3max)--> <br>
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option selected>Choose your subject</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
 
-  <script src=""></script>
+      <!--enter your message--> <br>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Enter your message</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+      <!--Btn Submit form-->
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Send</button>
+      </div>
+    </form>  
+  </div>  
 </body>
 </html>
