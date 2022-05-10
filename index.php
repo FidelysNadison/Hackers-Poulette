@@ -87,7 +87,7 @@
 
         <!--Success message-->
         <div class="success">
-          <strong>   <?php  echo $message;?></strong> 
+          <strong>   <?php  echo $message;?> </strong> 
         </div>
 </body>
 </html>
