@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/Css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="shortcute icon" href="./assets/image/hackers-poulette-logo.png">
-  <title>Hackers Poulette</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Success</title>
 </head>
-
 <body>
-  <div class="container">
-    <div id="big-logo">
-      <img src="./assets/image/hackers-poulette-logo.png" alt="image not found">
-    </div>
-    <form class="row g-3 needs-validation" action="contact.php" method="POST" novalidate>
+
+    <?php
+        if(!empty($_POST["send"])){
+            $firstName = $_POST["firstName"];
+            $lastName = $_POST["lastName"];
+            $inlineRadioOptions = $_POST["inlineRadioOptions"];
+            $Email = $_POST["Email"];
+            $message = $_POST["message"];
+            $toEmail =  "finadison@gmail.com";
+
+            $mailHeaders = "Name: " . $firstName . 
+            "\r\n lastName: " .  $lastName .
+            "\r\n inlineRadioOptions: " .  $inlineRadioOptions .
+            "\r\n Email: " .  $Email .
+            "\r\n message: " .  $message . "\r\n ";
+
+            if(mail($toEmail, $firstName, $lastName , $mailHeaders)){
+                $message = "Your information is received successfully.";
+            }
+        }
+    ?>
+
+<form class="row g-3 needs-validation" action="contact.php" method="POST" novalidate>
       <!--ask name-->
       <div class="col-md-4">
         <label for="validationCustom01" class="form-label">First name</label>
-        <input type="text" class="form-control" name="firstName"  id="validationCustom01" required>
+        <input type="text" class="form-control" name="fistName" id="validationCustom01" required>
       </div>
       <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Last name</label>
-        <input type="text" class="form-control" name="lastName"  id="validationCustom02" required>
+        <input type="text" class="form-control" name="lastName" id="validationCustom02" required>
       </div>
 
       <!--ASK GENDER--> <br>
@@ -43,7 +55,7 @@
         <!--put your email-->
         <div class="mb-3"> <br>
           <label for="exampleFormControlInput1" class="form-label">Email address</label>
-          <input type="email" class="form-control" name="Email" id="exampleFormControlInput1" placeholder="name@example.com">
+          <input type="email" class="form-control" name="Email"  id="exampleFormControlInput1" placeholder="name@example.com">
         </div>
 
         <!--select your country--> <br>
@@ -75,10 +87,7 @@
 
         <!--Success message-->
         <div class="success">
-          <strong>Success</strong> 
+          <strong>   <?php  echo $message;?></strong> 
         </div>
-    </form>
-  </div>
 </body>
-
 </html>
